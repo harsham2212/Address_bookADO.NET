@@ -22,8 +22,7 @@ namespace Address_Book
         public AddressBookModel AddData(AddressBookModel data)
         {
             try
-            {
-
+            { 
                 Connection();
                 SqlCommand com = new SqlCommand("sp_AddAddressBook", con);
                 com.CommandType = CommandType.StoredProcedure;
