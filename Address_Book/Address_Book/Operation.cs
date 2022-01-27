@@ -22,7 +22,7 @@ namespace Address_Book
         public AddressBookModel AddData(AddressBookModel data)
         {
             try
-            { 
+            {
                 Connection();
                 SqlCommand com = new SqlCommand("sp_AddAddressBook", con);
                 com.CommandType = CommandType.StoredProcedure;
@@ -40,6 +40,35 @@ namespace Address_Book
                 int i = com.ExecuteNonQuery();
                 con.Close();
                 return data;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+        //To Delete Person details    
+        public int DeletePersonDetails(int id)
+        {
+            try
+            {
+                Connection();
+                SqlCommand com = new SqlCommand("DeleteAddressBook", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", id);
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                con.Close();
+                if (i >= 1)
+                {
+
+                    return id;
+
+                }
+                else
+                {
+
+                    return 0;
+                }
             }
             catch (Exception e)
             {

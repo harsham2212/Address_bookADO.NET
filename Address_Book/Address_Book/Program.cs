@@ -43,7 +43,13 @@ namespace Address_Book
                                 Console.WriteLine("Not Added");
                             }
                             break;
-                        case 2:
+                    case 2:
+                        Console.WriteLine("Enter id to Delete Data");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        Address.DeletePersonDetails(num);
+                        Console.WriteLine("ID has been deleted from Database!");
+                        break;
+                    case 3:
                             flag = false;
                             break;
                     }
