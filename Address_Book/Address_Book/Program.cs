@@ -65,6 +65,9 @@ namespace Address_Book
                         }
                         break;
                     case 4:
+                        Address.GetAllContact();
+                        break;
+                    case 5:
                             flag = false;
                             break;
                     }
