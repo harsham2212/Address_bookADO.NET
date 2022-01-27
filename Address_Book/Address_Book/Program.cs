@@ -47,7 +47,7 @@ namespace Address_Book
                         Console.WriteLine("Enter id to Delete Data");
                         int num = Convert.ToInt32(Console.ReadLine());
                         Address.DeletePersonDetails(num);
-                        Console.WriteLine("ID has been deleted from Database!");
+                        Console.WriteLine("Data has been Deleted from Database!");
                         break;
                     case 3:
                             flag = false;
