@@ -76,5 +76,35 @@ namespace Address_Book
                 throw new Exception(e.Message);
             }
         }
+        //To Update Address book Table details 
+        public bool UpdateAddressBookDetail(int id, string firstname)
+        {
+            try
+            {
+                Connection();
+                SqlCommand com = new SqlCommand("UpdateAddressBook", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@firstname", firstname);
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                con.Close();
+                if (i >= 1)
+                {
+
+                    return true;
+
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

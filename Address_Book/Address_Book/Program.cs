@@ -50,6 +50,21 @@ namespace Address_Book
                         Console.WriteLine("Data has been Deleted from Database!");
                         break;
                     case 3:
+                        Console.WriteLine("Enter id of person whoes data you want to update");
+                        int personid = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter new name");
+                        string newname = Console.ReadLine();
+                        bool res = Address.UpdateAddressBookDetail(personid, newname);
+                        if (res != null)
+                        {
+                            Console.WriteLine("Successfully updated");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Not updated");
+                        }
+                        break;
+                    case 4:
                             flag = false;
                             break;
                     }
